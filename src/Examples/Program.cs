@@ -30,3 +30,8 @@ Console.WriteLine($"{nameof(NestedStaticallyConstructedSingleton)} example with 
 var nestedStaticallyConstructedSingletons = new List<NestedStaticallyConstructedSingleton>();
 Parallel.For(0, 3, _ => nestedStaticallyConstructedSingletons.Add(NestedStaticallyConstructedSingleton.Instance));
 Console.WriteLine();
+
+Console.WriteLine($"{nameof(LazySingleton)} example with parallelism");
+var lazySingletons = new List<LazySingleton>();
+Parallel.For(0, 3, _ => lazySingletons.Add(LazySingleton.Instance));
+Console.WriteLine();
